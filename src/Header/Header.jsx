@@ -17,7 +17,7 @@ const Header = () => {
     <Link to="/singUp">SingUp</Link>
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+    <h3 className='text-3xl italic text-red-500'>Famous Chef Dish</h3>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

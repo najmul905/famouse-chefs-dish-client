@@ -1,22 +1,27 @@
 import React, { useContext, useState } from 'react';
 import { contextProvider } from '../AuthProvider/AuthProviders';
 import './Home.css'
-// import { AuthContext } from '../AuthProvider/AuthProviders';
+import Banner from './Banner/Banner';
+// import cover from '../../../public/img/cover (1).jpg'
 
 const Home = () => {
-// const [chef,setChef]=useState([])
+    // const [chef,setChef]=useState([])
 
-const data=useContext(contextProvider)
-console.log(data)
-// const singleData=data.map((single)=></chef>)
-// console.log(singleData)
+    const data = useContext(contextProvider)
 
 
-// const {name}=singleData
+
     return (
-        <div className='home'>
-            
-<h1>Home page</h1>
+        <div className='home grid grid-cols-2 gap-4 mx-20 mt-10'>
+
+           
+            {data.map(item => <Banner
+                key={item.id}
+                item={item}
+
+            ></Banner>)}
+
+
         </div>
     );
 };

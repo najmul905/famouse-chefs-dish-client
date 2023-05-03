@@ -8,9 +8,7 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1>hello world ..Im am coming home</h1>
-
+      <div className='app'>
         <LayOut></LayOut>
       </div>
       

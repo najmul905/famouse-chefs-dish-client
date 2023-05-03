@@ -10,6 +10,8 @@ useEffect(()=>{
     .then(data=>setData(data))
 },[])
 const chefsData=data
+
+
     return (
        <contextProvider.Provider value={chefsData}>
         {children}
