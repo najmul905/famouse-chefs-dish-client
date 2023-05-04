@@ -8,8 +8,8 @@ const Dish = () => {
     console.log(name, dishes)
     return (
         <div className='grid md:grid-cols-5 mt-20 ml-12'>
-            <div className='col-span-2 '>
-                <div className="card w-96 glass ">
+            <div className='col-span-2 mb-5'>
+                <div className="card w-72 md:w-96 glass ">
                     <figure><img src={image} alt="car!" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">{name}</h2>
