@@ -7,7 +7,7 @@ const Dish = () => {
     const { name, dishes, image, description, } = singleData
     console.log(name, dishes)
     return (
-        <div className='grid grid-cols-5 mt-20 '>
+        <div className='grid grid-cols-5 mt-20 ml-12'>
             <div className='col-span-2 '>
                 <div className="card w-96 glass ">
                     <figure><img src={image} alt="car!" /></figure>

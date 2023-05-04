@@ -1,12 +1,35 @@
-import React, { useContext } from 'react';
-import { Link, Navigate, useLocation } from 'react-router-dom';
+import React, { useContext, } from 'react';
+import { Link,  useLocation, useNavigate } from 'react-router-dom';
 import { contextProvider } from '../AuthProvider/AuthProviders';
-
+import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { getAuth } from "firebase/auth";
 const LogIn = () => {
-const {logIn}=useContext(contextProvider)
+const {logIn,setUser}=useContext(contextProvider)
 const location=useLocation()
-const from=location.state?.from?.pathname || '/home'
+const from=location.state?.from?.pathname || "/"
 console.log(location)
+const navigate=useNavigate()
+const auth = getAuth();
+const provider=new GoogleAuthProvider()
+const gitProvider=new GithubAuthProvider()
+// const [googleUser,setGoogleUser]=useState(null)
+const handelGoogle=()=>{
+  signInWithPopup(auth,provider)
+  .then(result=>{
+    const gUser=result.user
+    setUser(gUser)
+  })
+  .catch(error=>console.log(error))
+}
+const handelGithub=()=>{
+  signInWithPopup(auth,gitProvider)
+  .then(result=>{
+    const gUser=result.user
+    setUser(gUser)
+  })
+  .catch(error=>console.log(error))
+}
+
 
 const handelLogIn=(event)=>{
     event.preventDefault()
@@ -18,9 +41,9 @@ const handelLogIn=(event)=>{
     .then(result=>{
        const  logInRe=result.user;
        console.log(logInRe)
-       Navigate(from)
+    navigate(from)
     })
-.catch(error=>{console.log(error)})
+.catch(error=>console.log(error))
     
 }
 
@@ -50,6 +73,8 @@ const handelLogIn=(event)=>{
           <button className="btn btn-primary">Login</button>
         </div>
       </div>
+      <div><button onClick={handelGoogle} className='bg-green-400 px-2 rounded'>SingUp With Google</button></div>
+      <div><button onClick={handelGithub} className='bg-green-400 px-2 rounded'>SingUp With Github</button></div>
       <Link className='text-green-600 ml-2 mb-2' to="/singUp">Create a New Account</Link>
       </form>
     </div>

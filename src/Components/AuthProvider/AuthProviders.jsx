@@ -52,7 +52,7 @@ const logOut=()=>{
 }
 // console.log(singleData)
 const authInfo={chefsData,getId,singleData,createUser,
-    logIn,user,loader,logOut}
+    logIn,user,loader,logOut,setUser}
     return (
        <contextProvider.Provider value={authInfo}>
         {children}

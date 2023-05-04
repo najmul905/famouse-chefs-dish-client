@@ -37,6 +37,7 @@ const handelLogOut=()=>{
     <Link className='ml-4 hover:text-orange-700' to="/singUp">SingUp</Link>
     <Link className='ml-4 hover:text-orange-700' to="/blog">Blog</Link>
     <Link className='ml-4 hover:text-orange-700' to="/404page">404 Page</Link>
+    {user&&<Link className='ml-4 hover:text-orange-700' to="/profile">Profile</Link>}
     </ul>
   </div>
   <div className="navbar-end flex items-center">

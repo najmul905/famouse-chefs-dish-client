@@ -1,10 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext,  } from 'react';
 import { Link } from 'react-router-dom';
 import { contextProvider } from '../AuthProvider/AuthProviders';
+
 
 const SingUp = () => {
 const {createUser}=useContext(contextProvider)
 console.log(createUser)
+
+
+
 
 const handelSingUp=event=>{
     event.preventDefault();
@@ -58,6 +62,7 @@ console.log(loggedUser)
           <button className="btn btn-primary">SingUp</button>
         </div>
       </div>
+     
       <Link className='text-green-600 ml-2 mb-2' to="/logIn"><button>LogIn</button></Link>
       </form>
     </div>

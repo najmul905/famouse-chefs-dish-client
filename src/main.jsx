@@ -14,6 +14,7 @@ import SingUp from './Components/SingUp/SingUp.jsx';
 import AuthProviders from './Components/AuthProvider/AuthProviders.jsx';
 import Dish from './Components/Cover/Dish.jsx';
 import PrivetRout from './Components/PrivetRout/PrivetRout.jsx';
+import Profile from './Components/Profile/Profile.jsx';
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       },
       {path:"dish",
       element:<PrivetRout><Dish></Dish></PrivetRout>
+    },
+    {
+      path:"profile",
+      element:<Profile></Profile>
     }
     ]
 
