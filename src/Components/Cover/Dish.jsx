@@ -7,7 +7,7 @@ const Dish = () => {
     const { name, dishes, image, description, } = singleData
     console.log(name, dishes)
     return (
-        <div className='grid grid-cols-5 mt-20 ml-12'>
+        <div className='grid md:grid-cols-5 mt-20 ml-12'>
             <div className='col-span-2 '>
                 <div className="card w-96 glass ">
                     <figure><img src={image} alt="car!" /></figure>
@@ -18,8 +18,8 @@ const Dish = () => {
                     </div>
                 </div>
             </div>
-            <div className='col-span-3'>
-                <div className='grid grid-cols-2 gap-4'>
+            <div className='md:col-span-3'>
+                <div className='grid md:grid-cols-2 gap-4'>
 {
     dishes.map(recipe=><Recipes
     key={recipe.id}

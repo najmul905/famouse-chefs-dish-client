@@ -12,7 +12,7 @@ const Home = () => {
 
 
     return (
-        <div className='home grid grid-cols-2 gap-4 mx-20 mt-10'>
+        <div className='home grid md:grid-cols-2 gap-4 mx-20 mt-10'>
 
            
             {chefsData.map(item => <Banner
