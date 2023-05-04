@@ -18,7 +18,7 @@ const logIn=(email,password)=>{
 
 const [data,setData]=useState([])
 useEffect(()=>{
-    fetch('http://localhost:3000/chefs')
+    fetch('https://chefs-dish-sarver-najmul905.vercel.app/chefs')
     .then(res=>res.json())
     .then(data=>setData(data))
 },[])
