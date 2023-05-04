@@ -14,6 +14,7 @@ const {getId}=useContext(contextProvider)
         getId(id)
 return;
     }
+    
     return (
         <div className='banner-container '>
            <div className="card lg:card-side bg-base-100 shadow-xl">
@@ -31,7 +32,7 @@ return;
 <AiFillLike></AiFillLike>
       </div>
       <div className=''>
-<Link to='/dish'><button onClick={()=>handelRecipe(id)} className='bg-orange-700 text-white flex items-center p-2 rounded '>See AlD Recipes <AiOutlineArrowRight></AiOutlineArrowRight></button></Link>
+<Link to='/dish'><button onClick={()=>handelRecipe(id)} className='bg-orange-700 text-white flex items-center p-2 rounded '>See Foods Recipes <AiOutlineArrowRight></AiOutlineArrowRight></button></Link>
       </div>
     </div>
   </div>

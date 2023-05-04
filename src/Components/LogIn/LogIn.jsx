@@ -7,6 +7,7 @@ const LogIn = () => {
 const {logIn,setUser}=useContext(contextProvider)
 const location=useLocation()
 const from=location.state?.from?.pathname || "/"
+console.log(from)
 console.log(location)
 const navigate=useNavigate()
 const auth = getAuth();
