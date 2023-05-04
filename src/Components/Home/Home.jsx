@@ -7,7 +7,7 @@ import Banner from './Banner/Banner';
 const Home = () => {
     // const [chef,setChef]=useState([])
 
-    const data = useContext(contextProvider)
+    const {chefsData} = useContext(contextProvider)
 
 
 
@@ -15,7 +15,7 @@ const Home = () => {
         <div className='home grid grid-cols-2 gap-4 mx-20 mt-10'>
 
            
-            {data.map(item => <Banner
+            {chefsData.map(item => <Banner
                 key={item.id}
                 item={item}
 
