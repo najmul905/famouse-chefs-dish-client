@@ -4,7 +4,7 @@ import { contextProvider } from '../AuthProvider/AuthProviders';
 
 
 const SingUp = () => {
-const {createUser}=useContext(contextProvider)
+const {createUser,createUser2}=useContext(contextProvider)
 console.log(createUser)
 
 
@@ -18,7 +18,7 @@ const handelSingUp=event=>{
     const password=form.password.value;
     console.log(name,email,password)
 
-createUser(email,password)
+createUser(email,password,)
 .then(result=>{
 const loggedUser=result.user;
 form.reset()
@@ -28,7 +28,11 @@ console.log(loggedUser)
 .catch(error=>{
     console.log(error)
 })
-
+createUser2(name,image)
+.then(result=>{
+  console.log(result.user)
+})
+.catch(error=>console.log(error))
 }
 
     return (
@@ -44,6 +48,12 @@ console.log(loggedUser)
             <span className="label-text">Name</span>
           </label>
           <input type="text" placeholder="name" name="name" className="input input-bordered" required/>
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Image</span>
+          </label>
+          <input type="text" placeholder="image" name="image" className="input input-bordered" required/>
         </div>
         <div className="form-control">
           <label className="label">

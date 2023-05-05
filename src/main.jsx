@@ -36,7 +36,7 @@ const router = createBrowserRouter([
         path:"singUp",
         element:<SingUp></SingUp>
       },
-      {path:"dish",
+      {path:"dish/:id",
       element:<PrivetRout><Dish></Dish></PrivetRout>
     },
    

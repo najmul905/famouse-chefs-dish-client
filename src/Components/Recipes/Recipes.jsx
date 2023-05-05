@@ -2,7 +2,7 @@ import React from 'react';
 
 const Recipes = ({data}) => {
     const {name,image,description}=data
-    console.log(name)
+    // console.log(name)
     return (
         <div>
             <div className="card w-72 glass">

@@ -8,12 +8,9 @@ const Banner = ({item}) => {
 
     const {name,image,description,years_experience,num_recipes,likes,id}=item
 
-const {getId}=useContext(contextProvider)
+// const {getId}=useContext(contextProvider)
 
-    const handelRecipe=(id)=>{
-        getId(id)
-return;
-    }
+    
     
     return (
         <div className='banner-container '>
@@ -32,7 +29,7 @@ return;
 <AiFillLike></AiFillLike>
       </div>
       <div className=''>
-<Link to='/dish'><button onClick={()=>handelRecipe(id)} className='bg-orange-700 text-white flex items-center p-2 rounded '>See Foods Recipes <AiOutlineArrowRight></AiOutlineArrowRight></button></Link>
+<Link to={`/dish/${item.id}`}><button className='bg-orange-700 text-white flex items-center p-2 rounded '>See Foods Recipes <AiOutlineArrowRight></AiOutlineArrowRight></button></Link>
       </div>
     </div>
   </div>

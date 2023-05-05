@@ -11,7 +11,7 @@ function App() {
     <>
       <div className='app'>
         <LayOut></LayOut>
-        <Footer ></Footer>
+        
       </div>
       
     </>
