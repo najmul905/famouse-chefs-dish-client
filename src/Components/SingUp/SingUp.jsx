@@ -1,4 +1,4 @@
-import React, { useContext,  } from 'react';
+import React, { useContext, useState,  } from 'react';
 import { Link } from 'react-router-dom';
 import { contextProvider } from '../AuthProvider/AuthProviders';
 import { getAuth, updateProfile,} from "firebase/auth";
@@ -8,7 +8,7 @@ const {createUser}=useContext(contextProvider)
 
 
 
-
+const [error,setError]=useState('')
 
 const handelSingUp=event=>{
     event.preventDefault();
@@ -18,7 +18,7 @@ const handelSingUp=event=>{
     const password=form.password.value;
     const image=form.image.value;
     console.log(name,email,password)
-
+setError('')
 createUser(email,password,)
 .then(result=>{
 const user=result.user;
@@ -28,8 +28,16 @@ console.log(user)
 
 })
 .catch(error=>{
-    console.log(error)
+    setError(error)
 })
+
+if(/(?=.*[A-Z])/.test(password)){
+setError('Please add at least One Uppercase')
+}
+else if(/(?=.*[0-9].*[0-9])/.test(password)){
+setError('Please add at least Two numbers')
+
+}
 
 
 }
@@ -39,16 +47,32 @@ const updateUserData=(user,name,image)=>{
     photoURL:image
   })
   .then(result=>{console.log(result)})
-  .catch(error=>{console.log(error)})
+  .catch(error=>{setError(error)})
 
 }
+
+// const [hp,setHp]=useState(true)
+// const hideP=()=>{
+// setHp(false)
+// }
+// console.log(hp)
+// const [sp,setSp]=useState(false)
+// const showP=()=>{
+// setSp(true)
+// }
+
+
+// console.log(sp)
     return (
         <div className="hero  bg-base-200">
   <div className="hero-content ">
    
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <form onSubmit={handelSingUp}>
-      <h1 className=''> pleas SingUp</h1>
+     
+      <div className='text-center mt-3 font-bold'>
+      <h1 > pleas SingUp</h1>
+      </div>
       <div className="card-body">
         <div className="form-control">
           <label className="label">
@@ -72,15 +96,19 @@ const updateUserData=(user,name,image)=>{
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" name="password" placeholder="password" className="input input-bordered" required/>
-          
+       <input type='password' name="password" placeholder="password" className="input input-bordered" required/>
+      <p><small>{error}</small></p>
+          {/* <button  className="btn btn-active btn-link"><small>Show Password</small></button>
+          */}
         </div>
-        <div className="form-control mt-6">
+        <div className="form-control mt-6 ">
           <button className="btn btn-primary">SingUp</button>
         </div>
       </div>
+     <div className='text-center mb-6'>
+     <Link className='text-green-600 ml-2 mb-2 ' to="/logIn"><button className='bg-red-500 text-white px-2 rounded'>LogIn</button></Link>
+     </div>
      
-      <Link className='text-green-600 ml-2 mb-2' to="/logIn"><button>LogIn</button></Link>
       </form>
     </div>
   </div>

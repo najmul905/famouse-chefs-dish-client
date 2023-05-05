@@ -3,6 +3,8 @@ import { Link,  useLocation, useNavigate } from 'react-router-dom';
 import { contextProvider } from '../AuthProvider/AuthProviders';
 import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { getAuth } from "firebase/auth";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 const LogIn = () => {
 const {logIn,setUser}=useContext(contextProvider)
 const location=useLocation()
@@ -55,7 +57,7 @@ const handelLogIn=(event)=>{
    
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <form onSubmit={handelLogIn}>
-      <h1 className=''> pleas LogIn</h1>
+      <h1 className='text-center font-bold mt-2'> pleas LogIn</h1>
       <div className="card-body">
         <div className="form-control">
           <label className="label">
@@ -74,9 +76,12 @@ const handelLogIn=(event)=>{
           <button className="btn btn-primary">Login</button>
         </div>
       </div>
-      <div><button onClick={handelGoogle} className='bg-green-400 px-2 rounded'>SingUp With Google</button></div>
-      <div><button onClick={handelGithub} className='bg-green-400 px-2 rounded'>SingUp With Github</button></div>
-      <Link className='text-green-600 ml-2 mb-2' to="/singUp">Create a New Account</Link>
+      <div className='text-center'>
+      <div className='mb-2'><button onClick={handelGoogle} className='bg-green-400 px-2 rounded flex items-center mx-auto'>SingUp With Google <FcGoogle></FcGoogle></button></div>
+      <div className='mb-2'><button onClick={handelGithub} className='bg-green-400 px-2 rounded flex items-center mx-auto'>SingUp With Github <FaGithub></FaGithub></button></div>
+      <Link className='text-green-600 ml-2 mb-2' to="/singUp"><button  className="btn btn-active btn-link"><small>Crate a New Account</small></button>
+         </Link>
+      </div>
       </form>
     </div>
   </div>

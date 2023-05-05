@@ -14,6 +14,11 @@ const Home = () => {
 
     return (
         <div>
+            <div className='text-8xl text-white text-center italic my-10'>
+                <h1 text-center>
+                    WeLLcOm
+                </h1>
+            </div>
         <div className='home grid md:grid-cols-2 gap-4 mx-20 mt-10'>
 
            
