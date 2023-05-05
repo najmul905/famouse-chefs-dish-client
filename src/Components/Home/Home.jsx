@@ -14,7 +14,7 @@ const Home = () => {
 
     return (
         <div>
-            <div className='text-8xl text-white text-center italic my-10'>
+            <div className='md:text-8xl text-4xl text-white text-center italic my-10'>
                 <h1 text-center>
                     WeLLcOm
                 </h1>
