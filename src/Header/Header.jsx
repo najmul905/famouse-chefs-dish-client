@@ -44,7 +44,7 @@ const handelLogOut=()=>{
 
   <div>
     {
-      user?<img className='h-8' src="https://lh3.googleusercontent.com/a/AGNmyxbtuGUpn1Vw4YIiXrj6qsd2srjvIF635Nt1KbQ=s192-c-rg-br100" alt="" />:<BsPersonCircle ></BsPersonCircle>
+      user?<img className='h-8 rounded-full' src={user.photoURL} alt="" />:<BsPersonCircle ></BsPersonCircle>
     }
   </div>
   <div className='ml-3'>{user? <button className='bg-red-500 px-2 rounded' onClick={handelLogOut}>LogOut</button>:<Link to="/logIn"><button className='bg-orange-700 hover:bg-orange-900 text-white p-2 rounded'>LogIn</button></Link>}</div>

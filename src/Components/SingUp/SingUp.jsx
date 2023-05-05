@@ -1,11 +1,11 @@
 import React, { useContext,  } from 'react';
 import { Link } from 'react-router-dom';
 import { contextProvider } from '../AuthProvider/AuthProviders';
-
-
+import { getAuth, updateProfile,} from "firebase/auth";
+const auth = getAuth();
 const SingUp = () => {
-const {createUser,createUser2}=useContext(contextProvider)
-console.log(createUser)
+const {createUser}=useContext(contextProvider)
+
 
 
 
@@ -16,25 +16,32 @@ const handelSingUp=event=>{
     const name=form.name.value;
     const email=form.email.value;
     const password=form.password.value;
+    const image=form.image.value;
     console.log(name,email,password)
 
 createUser(email,password,)
 .then(result=>{
-const loggedUser=result.user;
+const user=result.user;
+updateUserData(user,name,image)
 form.reset()
-console.log(loggedUser)
+console.log(user)
 
 })
 .catch(error=>{
     console.log(error)
 })
-createUser2(name,image)
-.then(result=>{
-  console.log(result.user)
-})
-.catch(error=>console.log(error))
-}
 
+
+}
+const updateUserData=(user,name,image)=>{
+  updateProfile(user,{
+    displayName:name,
+    photoURL:image
+  })
+  .then(result=>{console.log(result)})
+  .catch(error=>{console.log(error)})
+
+}
     return (
         <div className="hero  bg-base-200">
   <div className="hero-content ">
